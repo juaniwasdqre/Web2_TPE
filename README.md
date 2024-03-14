@@ -11,3 +11,4 @@ tablas:
 
 2. usuarios¿ (nosetodavia)
 
+3. reseñas (en comun user_id y album_id)

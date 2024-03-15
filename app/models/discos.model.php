@@ -28,7 +28,7 @@ class DiscosModel {
     }
 
     function borrarDisco($id) {
-        $query = $this->db->prepare('DELETE FROM discos WHERE id = ?');
+        $query = $this->db->prepare('DELETE FROM discos WHERE album_id = ?');
         $query->execute([$id]);
     }
 }

@@ -9,6 +9,6 @@ tablas:
 1. albums
     año, genero, banda, rating, reseña
 
-2. usuarios¿ (nosetodavia)
+2. usuarios
 
 3. reseñas (en comun user_id y album_id)

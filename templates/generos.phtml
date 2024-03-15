@@ -1,0 +1,16 @@
+<?php require_once 'header.php' ?>
+<form action="generos" method="POST" class="my-4">
+    <div class="row">          
+        <h4>Ver discos por genero:</h3>
+        <div class="col">
+            <label>Seleccionar genero</label>
+            <select required name="genre" class="form-control">
+                <option value="Todos">Todos</option>
+                <?php foreach ($discos as $disco) : ?>
+                    <option value="<?= $disco->genre ?>"><?= $disco->genre ?></option>
+                    <?php endforeach ?>
+                </select>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Filtrar</button>
+</form>

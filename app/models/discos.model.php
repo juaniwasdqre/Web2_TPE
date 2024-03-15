@@ -31,4 +31,11 @@ class DiscosModel {
         $query = $this->db->prepare('DELETE FROM discos WHERE album_id = ?');
         $query->execute([$id]);
     }
+
+    function getByGenre($genero) {
+        $query = $this->db->prepare('SELECT * FROM discos WHERE genre = ?');
+        $query->execute($genero);
+        $discos = $query->fetchAll(PDO::FETCH_OBJ);
+        return $discos;
+    }
 }

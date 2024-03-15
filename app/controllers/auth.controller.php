@@ -17,7 +17,7 @@ class AuthController {
         $this->view->showLogin();
     }
 
-    function authUser() {
+    function authLogin() {
         $username = $_POST['username'];
         $password = $_POST['password'];
 
@@ -28,6 +28,7 @@ class AuthController {
         //buscamos al usuario (por el nombre de usuario)! 
         $user = $this->model->getByUsername($username);
         if ($user && password_verify($password, $user->password)) {
+            var_dump("paso el if"); // no pasa el if el password_verify da siempre falso aunque todo exista correctamente...
             AuthHelper::login($user);
             header('Location ' . BASE_URL);
         } else {

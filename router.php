@@ -43,7 +43,7 @@ switch ($params[0]) {
         break;
     case 'authLogin':
         $controller = new AuthController();
-        $controller->authUser();
+        $controller->authLogin();
         break;
     case 'register':
         $controller = new AuthController();

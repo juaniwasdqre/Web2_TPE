@@ -6,6 +6,8 @@ class UserModel extends Model {
     function getByUsername($username) {
         $query = $this->db->prepare('SELECT * FROM users WHERE username = ?');
         $query->execute([$username]);
+        //aca hay trae todo bien el usuario y contraseña como se lo pido
+        //probado por var_dumps y funciona
 
         return $query->fetch(PDO::FETCH_OBJ);
     }

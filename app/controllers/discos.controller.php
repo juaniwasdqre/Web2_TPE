@@ -47,4 +47,22 @@ class DiscosController {
         //redirigimos al listado
         header("Location: " . BASE_URL);
     }
+
+    function showGeneros(){
+        $this->view->showGeneros();
+    }
+
+    function filtrarGenero() {
+        //por $_POST el genero y lo guardo
+        $genero = $_POST['genre'];
+        if ($genero=="Todos") {
+            $discos = $this->model->getDiscos();
+        } else {
+            $discos = $this->model->getByGenre($genero);
+        }
+
+        if (count($discos)==0) {
+            $error="NO HAY DISCOS";
+        }
+    }
 }

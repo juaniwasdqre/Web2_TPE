@@ -32,4 +32,8 @@ class DiscosView {
         echo "<h1>ERROR!</h1>";
         echo "<h2> $msg </h2>";
     }
+
+    function showGeneros() {
+        include_once './templates/generos.phtml';
+    }
 }

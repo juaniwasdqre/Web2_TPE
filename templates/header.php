@@ -26,7 +26,7 @@
                             <a class="nav-link" aria-current="page" href="">Discos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="about">About</a>
+                            <a class="nav-link" aria-current="page" href="generos">Generos</a>
                         </li>
 
                         <?php if (!isset($_SESSION['USER_ID'])) : ?>

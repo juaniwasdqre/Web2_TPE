@@ -1,10 +1,10 @@
 <?php
-require_once './app/controllers/task.controller.php';
+require_once 'app/controllers/discos.controller.php';
 // require_once './app/controllers/about.controller.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
-$action = 'listar'; //accion por defecto
+$action = 'discos'; //accion por defecto
 if(!empty($_GET['action'])) {
     $action = $_GET['action'];
 }
@@ -23,23 +23,20 @@ if(!empty($_GET['action'])) {
 $params = explode('/', $action);
 
 switch ($params[0]) {
-    case 'home':
-        $controller = new TaskController();
-        $controller->showHome();
+    case 'discos':
+        $controller = new DiscosController();
+        $controller->showDiscos();
         break;
     case 'agregar':
-        $controller = new TaskController();
-        $controller->addTask();
+        $controller = new DiscosController();
+        $controller->agregarDisco();
         break;
     case 'eliminar': //eliminar/:ID
-        $controller = new TaskController();
+        $controller = new DiscosController();
         $id = $params[1];
-        $controller->deleteTask($id);
+        $controller->borrarDisco($id);
         break;
-    case 'finalizar':
-        $controller = new TaskController();
-        $controller->completeTask();
-        break;
+        //FUTURO MOSTRAR LOS REVIEWS DEL USUARIO LOGEADO
     default:
         header("HTTP/1.0 404 Not Found");
         echo('<h1>404 NOT FOUND</h1>');

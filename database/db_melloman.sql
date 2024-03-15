@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-03-2024 a las 16:11:20
+-- Tiempo de generación: 15-03-2024 a las 19:23:32
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -77,8 +77,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `rol`) VALUES
-(1, 'webadmin', 'admin', 'admin'),
-(2, 'user_test', '123456', 'normaluser');
+(3, 'webadmin', '$2y$10$2ckrnv7XWvsKLFweRQ5E6uO33Lkx/yR.7.HIzVgh41R', ''),
+(4, 'user_test', '$2y$10$hzWhfMN9NLkK82IG3Vu6leeiUm6X6.IjHCLJueBP4a4', '');
 
 --
 -- Índices para tablas volcadas
@@ -124,7 +124,7 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas

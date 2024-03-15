@@ -33,6 +33,9 @@
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="login">Login</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="register">Register</a>
+                        </li>
                         <?php else : ?>
                         <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="logout">Logout (<?= $_SESSION['USER_EMAIL'] ?>)</a>

@@ -1,6 +1,7 @@
 <?php
 require_once 'app/controllers/discos.controller.php';
-// require_once './app/controllers/about.controller.php';
+require_once 'app/controllers/auth.controller.php';
+// require_once 'app/controllers/about.controller.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -35,6 +36,22 @@ switch ($params[0]) {
         $controller = new DiscosController();
         $id = $params[1];
         $controller->borrarDisco($id);
+        break;
+    case 'login':
+        $controller = new AuthController();
+        $controller->showLogin();
+        break;
+    case 'authLogin':
+        $controller = new AuthController();
+        $controller->authUser();
+        break;
+    case 'register':
+        $controller = new AuthController();
+        $controller->showRegister();
+        break;
+    case 'authRegister':
+        $controller = new AuthController();
+        $controller->authRegister();
         break;
         //FUTURO MOSTRAR LOS REVIEWS DEL USUARIO LOGEADO
     default:

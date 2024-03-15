@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-03-2024 a las 01:23:25
+-- Tiempo de generación: 15-03-2024 a las 16:11:20
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -41,8 +41,9 @@ CREATE TABLE `discos` (
 --
 
 INSERT INTO `discos` (`album_id`, `title`, `artist`, `dyear`, `producer`, `genre`) VALUES
-(1, 'assd', 'asd', 2014, 'asda', 'asda'),
-(2, 'laputamadre', 'quepasa', 2000, 'nose', 'qhayqhacer');
+(5, 'South of Heaven', 'Slayer', 1988, 'Rick Rubin', 'Thrash Metal'),
+(6, 'sxasdas', 'asdasda', 1999, 'asdasd', 'asdasd'),
+(7, 'asdasda', 'asdasdas', 2020, 'awdasdfa', 'asafa');
 
 -- --------------------------------------------------------
 
@@ -67,9 +68,17 @@ CREATE TABLE `reviews` (
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `country` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `password` varchar(50) NOT NULL,
+  `rol` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`user_id`, `username`, `password`, `rol`) VALUES
+(1, 'webadmin', 'admin', 'admin'),
+(2, 'user_test', '123456', 'normaluser');
 
 --
 -- Índices para tablas volcadas
@@ -103,7 +112,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `discos`
 --
 ALTER TABLE `discos`
-  MODIFY `album_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `album_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `reviews`
@@ -115,7 +124,7 @@ ALTER TABLE `reviews`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas

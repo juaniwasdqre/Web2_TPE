@@ -1,0 +1,18 @@
+<?php require_once 'header.php' ?>
+<h2>INICIE SESION CON SUS DATOS!</h2>
+<form method="POST" action="authLogin">
+  <div class="form-group">
+    <label for="username">Nombre de Usuario</label>
+    <input type="text" class="form-control" name="username" placeholder="Ingrese su nombre de usuario">
+  </div>
+  <div class="form-group">
+    <label for="password">Contraseña</label>
+    <input type="password" class="form-control" id="password" name="password" placeholder="Ingrese su contraseña">
+  </div>
+  <?php if ($error) : ?>
+    <div class='alert alert-danger' role='alert'>
+        <?= $error ?>
+    </div> 
+  <?php endif ?>
+  <button type="submit" class="btn btn-primary">Ingresar!</button>
+</form>

@@ -22,10 +22,6 @@ class DiscosView {
         }
         echo "</ul>";
         echo "</div>";
-
-        $clave = '12345';
-        $clave_encriptada = password_hash($clave,PASSWORD_DEFAULT);
-        echo "La clave $clave encriptada es la siguiente: $clave_encriptada";
     }
 
     function showError($msg) {

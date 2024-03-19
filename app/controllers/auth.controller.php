@@ -27,14 +27,14 @@ class AuthController {
         }
         //buscamos al usuario (por el nombre de usuario)! 
         $user = $this->model->getByUsername($username);
-        if ($user && password_verify($password, $user->password)) {
-            var_dump("paso el if"); // no pasa el if el password_verify da siempre falso aunque todo exista correctamente...
+        echo 'esporaca?';
+        if ($user && password_verify($password, $user->password)){
+            echo 'esto esta ok tamb';
             AuthHelper::login($user);
-            header('Location ' . BASE_URL);
+            header('Location: '. BASE_URL);
         } else {
             $this->view->showLogin('Usuario NO ENCONTRADO');
         }
-        echo "tu usuario y contraseña son $username y $password";
     }
 
     function logout() {

@@ -6,7 +6,7 @@ class DiscosView {
     }
 
     function showFormDisco() {
-        require './templates/form_alta.php';
+        require './templates/form_alta.phtml';
     }
 
     function showError($msg) {

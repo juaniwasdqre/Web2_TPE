@@ -1,12 +1,14 @@
 <?php
 include_once './app/models/discos.model.php';
 include_once './app/views/discos.view.php';
+include_once './app/helpers/auth.helper.php';
 
 class DiscosController {
     private $model;
     private $view;
 
     function __construct() {
+        AuthHelper::verify();
         $this->model = new DiscosModel();
         $this->view = new DiscosView();
     }
@@ -28,6 +30,10 @@ class DiscosController {
         $producer = $_POST['producer'];
         $genre = $_POST['genre'];
 
+        var_dump($_POST);
+        var_dump($_FILES);
+        die();
+
         //verifico campos obligatorios
         if (empty($titulo) || empty($artista)) {
             $this->view->showError("Faltan datos obligatorios");
@@ -39,6 +45,7 @@ class DiscosController {
 
         //redirigimos al listado
         header("Location: " . BASE_URL);
+        
     }
 
     function borrarDisco($id) {
@@ -49,7 +56,8 @@ class DiscosController {
     }
 
     function showGeneros(){
-        $this->view->showGeneros();
+        $generos = $this->model->getGeneros();
+        $this->view->showGeneros($generos);
     }
 
     function filtrarGenero() {
@@ -57,12 +65,18 @@ class DiscosController {
         $genero = $_POST['genre'];
         if ($genero=="Todos") {
             $discos = $this->model->getDiscos();
+            $this->view->showDiscos($discos);
         } else {
             $discos = $this->model->getByGenre($genero);
+            $this->view->showDiscos($discos);
         }
 
         if (count($discos)==0) {
             $error="NO HAY DISCOS";
         }
+    }
+
+    function showLoggedHome() {
+        $this->view->showAdminMenu();
     }
 }

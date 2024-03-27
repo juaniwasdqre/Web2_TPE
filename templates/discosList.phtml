@@ -1,0 +1,19 @@
+<?php 
+require_once 'templates/header.phtml';
+require_once 'templates/form_alta.phtml';
+
+?>
+
+<h2>Discos</h2>
+<ul class="list-group">
+<?php foreach($discos as $disco): ?>
+    <li class="list-group-item disco">
+        <div>
+            <b><?= $disco->title ?> (<?=$disco->dyear?>)</b> | Artista: <?=$disco->artist?>
+        </div>
+        <a href="detalleDiscos/<?php echo $disco->id_album?>"><button class="btn btn-primary mt-2">Ver detalle</button></a>
+    </li>
+<?php endforeach ?>
+</ul>
+
+<p class="mt-3"><small>Mostrando <?=$count?> discos</small></p>

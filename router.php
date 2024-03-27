@@ -1,7 +1,6 @@
 <?php
 require_once 'app/controllers/discos.controller.php';
 require_once 'app/controllers/auth.controller.php';
-// require_once 'app/controllers/about.controller.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -53,6 +52,21 @@ switch ($params[0]) {
         $controller = new AuthController();
         $controller->authRegister();
         break;
+    case 'generos':
+        $controller = new DiscosController();
+        $controller->showGeneros();
+        break;
+    case 'filtrar':
+        $controller = new DiscosController();
+        $controller->filtrarGenero();
+        break;
+    case 'loginhome':
+        $controller = new DiscosController();
+        $controller->showLoggedHome();
+        break;
+    case 'logout':
+        $controller = new AuthController();
+        $controller->logout();
         //FUTURO MOSTRAR LOS REVIEWS DEL USUARIO LOGEADO
     default:
         header("HTTP/1.0 404 Not Found");

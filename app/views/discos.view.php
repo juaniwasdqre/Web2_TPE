@@ -1,7 +1,9 @@
 <?php
 class DiscosView {
     function showDiscos($discos) {
-        require_once 'templates/header.php';
+        $count = count($discos);
+        require 'templates/discosList.phtml';
+        /* require_once 'templates/header.phtml';
         require_once 'templates/form_alta.php';
         
         echo "<div class='container'>
@@ -21,7 +23,7 @@ class DiscosView {
             echo "</div>";
         }
         echo "</ul>";
-        echo "</div>";
+        echo "</div>"; */
     }
 
     function showError($msg) {
@@ -29,7 +31,11 @@ class DiscosView {
         echo "<h2> $msg </h2>";
     }
 
-    function showGeneros() {
-        include_once './templates/generos.phtml';
+    function showGeneros($generos) {
+        require './templates/generos.phtml';
+    }
+
+    function showAdminMenu() {
+        require './templates/adminmenu.phtml';
     }
 }

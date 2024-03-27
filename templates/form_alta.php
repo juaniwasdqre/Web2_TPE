@@ -1,38 +1,52 @@
 <!-- formulario de alta de disco -->
-<form action="agregar" method="POST" class="my-4">
+<form action="agregar" method="POST" class="my-4" enctype="multipart/form-data">
     <div class="row">
-        <div class="col">
-            <div class="form-group">
-                <label>Título</label>
-                <input required name="titulo" type="text" class="form-control">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label>Título</label>
+                    <input required name="titulo" type="text" class="form-control">
+                </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="form-group">
-                <label>Artista</label>
-                <input required name="artista" type="text" class="form-control">
+            <div class="col">
+                <div class="form-group">
+                    <label>Artista</label>
+                    <input required name="artista" type="text" class="form-control">
+                </div>
             </div>
-        </div>
-        <div class="col">
-            <div class="form-group">
-                <label>Año</label>
-                <div>
-                    <input type="number" name="year" min="1900" max="2099" required>
+            <div class="col">
+                <div class="form-group">
+                    <label>Año</label>
+                    <div>
+                        <input type="number" name="year" min="1900" max="2099" required class="form-control">
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="form-group">
-                <label>Productor</label>
-                <input required name="producer" type="text" class="form-control">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label>Productor</label>
+                    <input required name="producer" type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label>Género</label>
+                    <input required name="genre" type="text" class="form-control">
+                </div>
             </div>
         </div>
-        <div class="col">
-            <div class="form-group">
-                <label>Género</label>
-                <input required name="genre" type="text" class="form-control">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label>Imagen</label>
+
+                    <input type="file" name="img" class="form-control" id="imageToUpload">
+                </div>
             </div>
         </div>
+        
         <!-- <div class="col-3">
             <div class="form-group">
                 <label>Prioridad</label>

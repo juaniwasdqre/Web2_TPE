@@ -1,6 +1,6 @@
 <?php 
-require_once 'templates/header.phtml';
-require_once 'templates/form_alta.phtml';
+require_once './templates/header.phtml';
+// require_once './templates/form_alta.php';
 
 ?>
 
@@ -9,9 +9,10 @@ require_once 'templates/form_alta.phtml';
 <?php foreach($discos as $disco): ?>
     <li class="list-group-item disco">
         <div>
-            <b><?= $disco->title ?> (<?=$disco->dyear?>)</b> | Artista: <?=$disco->artist?>
+            <b><?= $disco->title ?> (<?=$disco->dyear?>)</b> - <?=$disco->artist?>
         </div>
-        <a href="detalleDiscos/<?php echo $disco->id_album?>"><button class="btn btn-primary mt-2">Ver detalle</button></a>
+        <a href="detalleDisco/<?php echo $disco->album_id?>"><button class="btn btn-primary mt-2">Ver detalle</button></a>
+        <a class='btn btn-danger btn-sm' href='eliminar/<?=$disco->album_id?>'>ELIMINAR</a>
     </li>
 <?php endforeach ?>
 </ul>

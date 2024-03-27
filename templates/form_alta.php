@@ -1,5 +1,9 @@
 <!-- formulario de alta de disco -->
-<form action="agregar" method="POST" class="my-4" enctype="multipart/form-data">
+<?php
+require_once 'templates/header.phtml';
+?>
+<h2>AGREGA UN DISCO...</h2>
+<form action="subirdisco" method="POST" class="my-4" enctype="multipart/form-data">
     <div class="row">
         <div class="row">
             <div class="col">
@@ -18,7 +22,7 @@
                 <div class="form-group">
                     <label>Año</label>
                     <div>
-                        <input type="number" name="year" min="1900" max="2099" required class="form-control">
+                        <input type="number" name="year" min="1900" max="2100" required class="form-control">
                     </div>
                 </div>
             </div>
@@ -37,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col">
                 <div class="form-group">
                     <label>Imagen</label>
@@ -45,7 +49,7 @@
                     <input type="file" name="img" class="form-control" id="imageToUpload">
                 </div>
             </div>
-        </div>
+        </div> -->
         
         <!-- <div class="col-3">
             <div class="form-group">

@@ -29,6 +29,10 @@ switch ($params[0]) {
         break;
     case 'agregar':
         $controller = new DiscosController();
+        $controller->showFormDisco();
+        break;
+    case 'subirdisco':
+        $controller = new DiscosController();
         $controller->agregarDisco();
         break;
     case 'eliminar': //eliminar/:ID
@@ -67,7 +71,12 @@ switch ($params[0]) {
     case 'logout':
         $controller = new AuthController();
         $controller->logout();
+        break;
         //FUTURO MOSTRAR LOS REVIEWS DEL USUARIO LOGEADO
+    case 'detalleDisco':
+        $controller = new DiscosController();
+        $controller->showDetalleDiscoById($params[1]);
+        break;
     default:
         header("HTTP/1.0 404 Not Found");
         echo('<h1>404 NOT FOUND</h1>');

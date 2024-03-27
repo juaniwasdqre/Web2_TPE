@@ -1,0 +1,16 @@
+<?php require 'templates/header.phtml';?>
+
+<ul class="list-group">
+    <li class="list-group-item disco">
+        <h2><?= $disco[0]->title ?></h2> 
+        <h3><?=$disco[0]->artist?></h3>
+    </li>
+    <li class="list-group-item disco">
+        <p>Fecha de lanzamiento: <?=$disco[0]->dyear?></p> 
+        <p>Producido por: <?=$disco[0]->producer?></p>
+        <p>Genero: <?=$disco[0]->genre?></p>
+    </li>
+</ul>
+
+
+<?php require 'templates/footer.phtml';?>

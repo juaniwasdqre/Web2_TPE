@@ -30,10 +30,6 @@ class DiscosController {
         $producer = $_POST['producer'];
         $genre = $_POST['genre'];
 
-        var_dump($_POST);
-        var_dump($_FILES);
-        die();
-
         //verifico campos obligatorios
         if (empty($titulo) || empty($artista)) {
             $this->view->showError("Faltan datos obligatorios");
@@ -78,5 +74,14 @@ class DiscosController {
 
     function showLoggedHome() {
         $this->view->showAdminMenu();
+    }
+
+    function showFormDisco() {
+        $this->view->showFormDisco();
+    }
+
+    function showDetalleDiscoById($id) {
+        $disco = $this->model->getDiscoById($id);
+        $this->view->showDetalleDisco($disco);
     }
 }

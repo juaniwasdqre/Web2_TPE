@@ -33,7 +33,7 @@ class DiscosModel {
     }
 
     function getGeneros() {
-        $query = $this->db->prepare('SELECT genre FROM discos');
+        $query = $this->db->prepare('SELECT DISTINCT genre FROM discos');
         $query->execute();
         $generos = $query->fetchAll(PDO::FETCH_OBJ);
         return $generos;
@@ -44,5 +44,13 @@ class DiscosModel {
         $query->execute([$genero]);
         $discos = $query->fetchAll(PDO::FETCH_OBJ);
         return $discos;
+    }
+    
+    function getDiscoById($id) {
+        $query = $this->db->prepare('SELECT * FROM discos WHERE album_id = ?');
+        $query->execute([$id]);
+        $disco = $query->fetchAll(PDO::FETCH_OBJ);
+        return $disco;
+
     }
 }
